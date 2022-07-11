@@ -18,17 +18,8 @@ import com.google.gson.GsonBuilder;
 
 public class App {
 
-	public static void main(String[] args) {
-		CRUDProducto miCrud = new CRUDProducto();
-		Producto producto1 = new Producto("Pan Lactal 350 gr.","FARGO","2022-08-22",280,25,10));
-		miCrud.insertar(tipo1);
-		ArrayList <Tipo> tipos = miCrud.consultarTipos();
-		for(Tipo tipo:tipos) {
-		System.out.println(tipo.getDescripion());
-		}
-		
-		
-		//port(8080);
+	public static void main(String[] args) {		
+		port(8080);
 		get("/user",(request,response)->{
 			response.type("application/json");
 			//response.header("Access-Control-Allow-Origin", "*");
@@ -214,6 +205,24 @@ public class App {
 			
 		});
 
+		post("/producto",(request,response)->{
+			response.type("application/json");
+			Gson mapper = new Gson();
+			Producto producto = mapper.fromJson(request.body(),Producto.class);
+
+			//Ejecutar Servicio
+			CRUDProducto cp = new CRUDProducto();
+			boolean resultado = cp.insertar(producto);
+			if (resultado == true) {
+			return mapper
+			.toJson(new StandardResponse(StatusResponse.SUCCESS));
+			}else {
+			return mapper
+			.toJson(new StandardResponse(StatusResponse.ERROR));
+			    }
+			});
+		
+		
 	}
 
 }
