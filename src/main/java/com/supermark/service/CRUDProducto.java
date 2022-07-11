@@ -16,7 +16,35 @@ public class CRUDProducto {
 		this.sql = "";
 	}
 	
-	public Producto getProducto(Integer id) {
+	public boolean insertar(Producto producto) {
+		//CRUDTipo crudTipo = new CRUDTipo();
+		//crudTipo.insertar(producto.getTipo());
+		this.sql = "INSERT INTO producto "+
+		"(nombre,marca,fecha_venc,precio,stock,id_tipo) "+
+		"VALUE ('"+
+		producto.getNombre()+"','"+
+		producto.getMarca()+"','"+
+		producto.getFecha_venc()+"',"+
+		producto.getPrecio()+","+
+		producto.getStock()+","+
+		producto.getTipo().getId()+")";
+		System.out.println(this.sql);
+		boolean resultado = false;
+		try {
+		conexion.getStmt().executeUpdate(this.sql);
+		resultado = true;
+		System.out.println("Producto registrado");
+		} catch (SQLException e){
+		e.printStackTrace();
+		}finally {
+		return resultado;
+		}
+
+		}
+	
+	
+	
+/*	public Producto getProducto(Integer id) {
 		Producto prod = null;
 		this.sql = "SELECT * FROM Producto WHERE id ="+id;
 		try {
@@ -29,13 +57,15 @@ public class CRUDProducto {
 						rs.getString("fecha_venc"), 
 						rs.getFloat("precio"), 
 						rs.getInt("stock"),
-						rs.getInt("tipo");
-						);			}
+						rs.getInt("tipo")
+						)
+				}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return prod;
 	}
+*/
 	
 	public void actualizarStock(Producto producto,int cantidad) {
 		this.sql = "UPDATE Producto SET stock="+
