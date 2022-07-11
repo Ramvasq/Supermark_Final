@@ -20,6 +20,23 @@ public class App {
 
 	public static void main(String[] args) {		
 		port(8080);
+		get("/ingresar",(request,response)->{
+			response.type("application/json");
+			Gson mapper = new Gson();
+			Usuario usuario = mapper.fromJson(request.body(),Usuario.class);
+
+			CRUDUsuario cu = new CRUDUsuario();
+			boolean resultado = cu.iniciarSesion(usuario);
+			if (resultado == true) {
+				return mapper
+						.toJson(new StandardResponse(StatusResponse.SUCCESS,"Sesión Iniciada"));
+			}else {
+				return mapper
+						.toJson(new StandardResponse(StatusResponse.ERROR, "Contrasenia y/o Usuario incorrecto"));
+			    }
+			});
+		
+		
 		get("/user",(request,response)->{
 			response.type("application/json");
 			//response.header("Access-Control-Allow-Origin", "*");
