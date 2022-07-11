@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "fd5af7d5-7a6a-43a7-ae37-04a79837ea51",
+		"name": "Supermark ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Ram Postman\",\r\n    \"marca\":\"aa\",\r\n    \"fecha_venc\":\"2022-03-02\",\r\n    \"precio\":12.3,\r\n    \"stock\":21,\r\n    \"tipo\":{\r\n        \"id\":2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/producto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/ingresar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"ram@mail.com\",\r\n    \"contrasenia\" : \"lavaca\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ingresar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ingresar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/registrar_usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Ram Postman\",\r\n    \"apellido\":\"Vasquez\",\r\n    \"email\":\"ram@mail.com\",\r\n    \"dni\":33762856,\r\n    \"contrasenia\":\"lavaca\",\r\n    \"domicilio\":\"casa uasi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/registrar_usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrar_usuario"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
