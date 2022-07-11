@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.supermark.models.Comprobante;
 import com.supermark.models.Detalle;
+import com.supermark.models.Producto;
 import com.supermark.models.Usuario;
 
 public class CRUDComprobante {

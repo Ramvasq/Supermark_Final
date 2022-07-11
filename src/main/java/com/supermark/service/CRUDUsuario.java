@@ -37,6 +37,7 @@ public class CRUDUsuario {
 		CRUDDomicilio cdom = new CRUDDomicilio();
 		Domicilio dom = cdom.register(usuario.getDomicilio());
 		usuario.setDomicilio(dom);
+		
 		this.sql = "INSERT INTO Usuario "+
 				"(nombre,apellido,email,dni,contrasenia,id_domicilio) "+
 				"VALUE ('"+
@@ -65,7 +66,7 @@ public class CRUDUsuario {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			System.out.println("Usuarios Registrados en Cinemar:");
+			System.out.println("Usuarios Registrados en Supermark:");
 			ResultSet rs = conexion.getRs();
 			try {
 				while (rs.next()) {//Mientras exista un fila siguiente/Elementos en el conjunto

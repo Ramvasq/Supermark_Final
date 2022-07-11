@@ -6,15 +6,43 @@ public class Producto {
 	private Integer id;
 	private String nombre;
 	private String marca;
-	private Date f_venc;
+	private String f_venc;
 	private Float precio;
 	private Integer stock;
+	private Tipo tipo;
 	
 	public Producto(Integer id) {
 		super();
 		this.id = id;
 	}
 	
+	
+	
+	public Producto(Integer id, String nombre, String marca, String f_venc, Float precio, Integer stock, Tipo tipo) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.marca = marca;
+		this.f_venc = f_venc;
+		this.precio = precio;
+		this.stock = stock;
+		this.tipo = tipo;
+	}
+
+	
+
+	public Producto(String nombre, String marca, String f_venc, Float precio, Integer stock, Tipo tipo) {
+		super();
+		this.nombre = nombre;
+		this.marca = marca;
+		this.f_venc = f_venc;
+		this.precio = precio;
+		this.stock = stock;
+		this.tipo = tipo;
+	}
+
+
+
 	public Producto(Integer id,Float precio) {
 		super();
 		this.id = id;
@@ -34,7 +62,7 @@ public class Producto {
 		this.stock = stock;
 	}
 	
-	public Producto(Integer id, String nombre, String marca, Date f_venc, Float precio, Integer stock) {
+	public Producto(Integer id, String nombre, String marca, String f_venc, Float precio, Integer stock) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -69,10 +97,22 @@ public class Producto {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	public Date getF_venc() {
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+
+
+
+	public String getF_venc() {
 		return f_venc;
 	}
-	public void setF_venc(Date f_venc) {
+	public void setF_venc(String f_venc) {
 		this.f_venc = f_venc;
 	}
 	public Float getPrecio() {

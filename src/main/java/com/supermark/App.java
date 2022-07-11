@@ -5,10 +5,13 @@ import static spark.Spark.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
+import com.supermark.StandardResponse;
+import com.supermark.StatusResponse;
 import com.supermark.models.*;
 import com.supermark.service.CRUDCarrito;
 import com.supermark.service.CRUDComprobante;
 import com.supermark.service.CRUDProducto;
+import com.supermark.service.CRUDTipo;
 import com.supermark.service.CRUDUsuario;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -16,7 +19,16 @@ import com.google.gson.GsonBuilder;
 public class App {
 
 	public static void main(String[] args) {
-		port(8080);
+		CRUDProducto miCrud = new CRUDProducto();
+		Producto producto1 = new Producto("Pan Lactal 350 gr.","FARGO","2022-08-22",280,25,10));
+		miCrud.insertar(tipo1);
+		ArrayList <Tipo> tipos = miCrud.consultarTipos();
+		for(Tipo tipo:tipos) {
+		System.out.println(tipo.getDescripion());
+		}
+		
+		
+		//port(8080);
 		get("/user",(request,response)->{
 			response.type("application/json");
 			//response.header("Access-Control-Allow-Origin", "*");
@@ -25,6 +37,7 @@ public class App {
 			Usuario user = mapper.fromJson(request.body(),Usuario.class);
 			
 			CRUDUsuario cu = new CRUDUsuario();
+			
 			boolean resultado = cu.estaRegistrado(user);
 			
 			if(resultado==true) {
@@ -166,13 +179,13 @@ public class App {
 		
 		post("/producto/:id",(request,response)->{
 			response.type("application/json");
-			Gson mapper = new GsonBuilder().setDateFormat("yyyy/MM/dd").create();
+			Gson mapper = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 			Producto producto = mapper.fromJson(request.body(),Producto.class);
 			
 			CRUDUsuario cu = new CRUDUsuario();
 			boolean resultado = cu.esAdmin(new Usuario(Integer.valueOf(request.params(":id"))));
 			if(resultado==true) {
-				CRUDProducto cp= new CRUDProducto();
+				CRUDProducto cp = new CRUDProducto();
 				
 				//Descomentar
 				//resultado = cp.cargarProducto(producto);

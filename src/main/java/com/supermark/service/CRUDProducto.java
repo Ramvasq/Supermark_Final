@@ -26,11 +26,11 @@ public class CRUDProducto {
 						rs.getInt("id"),
 						rs.getString("nombre"),
 						rs.getString("marca"),
-						rs.getDate("fecha_venc"), 
+						rs.getString("fecha_venc"), 
 						rs.getFloat("precio"), 
-						rs.getInt("stock")
-						);
-			}
+						rs.getInt("stock"),
+						rs.getInt("tipo");
+						);			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -6,6 +6,13 @@ public class Localidad {
 	private String departamento;
 	private String ciudad;
 	
+	public Localidad(String provincia, String departamento, String ciudad) {
+		super();
+		this.provincia = provincia;
+		this.departamento = departamento;
+		this.ciudad = ciudad;
+	}
+
 	public Localidad(Integer id) {
 		super();
 		this.id = id;

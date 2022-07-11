@@ -11,7 +11,7 @@ public class Conexion {
 	private String DB_URL = "jdbc:mysql://localhost:3306/";
 	//Credenciales de la BDD
 	private static final String USER = "root";
-	private static final String PASS = "juramentada";
+	private static final String PASS = "cocovaca";
 	
 	private Connection conn = null;
 	private Statement stmt = null;//Objeto para realizar las declaraciones SQL que requiramos

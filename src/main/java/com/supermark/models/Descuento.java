@@ -1,13 +1,26 @@
 package com.supermark.models;
 
 public class Descuento {
+	private Integer id;
 	private Float porcentaje;
-	private String dia;
 	
-	public Descuento(Float porcentaje, String dia) {
+	public Descuento(Integer id, Float porcentaje) {
+		super();
+		this.id = id;
+		this.porcentaje = porcentaje;
+	}
+
+	public Descuento(Float porcentaje) {
 		super();
 		this.porcentaje = porcentaje;
-		this.dia = dia;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public Float getPorcentaje() {
@@ -17,12 +30,8 @@ public class Descuento {
 	public void setPorcentaje(Float porcentaje) {
 		this.porcentaje = porcentaje;
 	}
-
-	public String getDia() {
-		return dia;
-	}
-
-	public void setDia(String dia) {
-		this.dia = dia;
-	}
+	
+	
+	
 }
+

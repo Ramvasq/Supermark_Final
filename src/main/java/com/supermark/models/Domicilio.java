@@ -12,9 +12,8 @@ public class Domicilio {
 		this.id = id;
 	}
 	
-	public Domicilio(Integer id, String calle, Integer numero, Integer depNumero, Integer piso) {
+	public Domicilio(String calle, Integer numero, Integer depNumero, Integer piso) {
 		super();
-		this.id = id;
 		this.calle = calle;
 		this.numero = numero;
 		this.depNumero = depNumero;

@@ -53,7 +53,6 @@ public class CRUDDomicilio {
 		try {
 			conexion.setRs(conexion.getStmt().executeQuery(sql));
 			dom = new Domicilio(
-						id,
 						conexion.getRs().getString("calle1"),
 						conexion.getRs().getInt("numero"),
 						conexion.getRs().getInt("depNumero"),
