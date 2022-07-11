@@ -6,36 +6,35 @@ public class Producto {
 	private Integer id;
 	private String nombre;
 	private String marca;
-	private String f_venc;
+	private String fecha_venc;
 	private Float precio;
 	private Integer stock;
 	private Tipo tipo;
 	
-	public Producto(Integer id) {
+	/*public Producto(Integer id) {
 		super();
 		this.id = id;
-	}
+	} */
 	
 	
-	
-	public Producto(Integer id, String nombre, String marca, String f_venc, Float precio, Integer stock, Tipo tipo) {
+	public Producto(Integer id, String nombre, String marca, String fecha_venc, Float precio, Integer stock, Tipo tipo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.marca = marca;
-		this.f_venc = f_venc;
+		this.fecha_venc = fecha_venc;
 		this.precio = precio;
 		this.stock = stock;
 		this.tipo = tipo;
 	}
 
-	
 
-	public Producto(String nombre, String marca, String f_venc, Float precio, Integer stock, Tipo tipo) {
+
+	public Producto(String nombre, String marca, String fecha_venc, Float precio, Integer stock, Tipo tipo) {
 		super();
 		this.nombre = nombre;
 		this.marca = marca;
-		this.f_venc = f_venc;
+		this.fecha_venc = fecha_venc;
 		this.precio = precio;
 		this.stock = stock;
 		this.tipo = tipo;
@@ -62,12 +61,12 @@ public class Producto {
 		this.stock = stock;
 	}
 	
-	public Producto(Integer id, String nombre, String marca, String f_venc, Float precio, Integer stock) {
+	public Producto(Integer id, String nombre, String marca, String fecha_venc, Float precio, Integer stock) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.marca = marca;
-		this.f_venc = f_venc;
+		this.fecha_venc = fecha_venc;
 		this.precio = precio;
 		this.stock = stock;
 	}
@@ -109,11 +108,11 @@ public class Producto {
 
 
 
-	public String getF_venc() {
-		return f_venc;
+	public String getFecha_venc() {
+		return fecha_venc;
 	}
-	public void setF_venc(String f_venc) {
-		this.f_venc = f_venc;
+	public void setFecha_venc(String fecha_venc) {
+		this.fecha_venc = fecha_venc;
 	}
 	public Float getPrecio() {
 		return precio;
@@ -124,7 +123,7 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", f_venc=" + f_venc + ", precio="
+		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", fecha_venc=" + fecha_venc + ", precio="
 				+ precio + ", stock=" + stock + "]";
 	}
 }
